@@ -1,0 +1,24 @@
+<div class="row ml-0 mr-0 h-100 justify-content-center align-items-center text-center">
+  <form [formGroup]="loginForm" class="form-signin col-12" novalidate>
+    <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <div *ngIf="!loading">
+      <mat-form-field class="mt-2 mb-3">
+        <input matInput placeholder="Nombre de usuario" formControlName="username">
+        <mat-error *ngIf="loginForm.get('username').hasError('required')">
+          Nombre de usuario es obligatorio
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="mb-3">
+        <input matInput type="password" placeholder="Contraseña" formControlName="password">
+        <mat-error *ngIf="loginForm.get('password').hasError('required')">
+          Contraseña es obligatoria
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <mat-spinner *ngIf="loading" class="mx-auto mt-4 mb-4"></mat-spinner>
+    <button (click)="login()" [disabled]="loading || loginForm.invalid" *ngIf="!authService.isLoggedIn" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    <p class="mt-5 mb-3 text-muted">© 2007-2018</p>
+  </form>
+  <button (click)="logout()" *ngIf="authService.isLoggedIn" class="btn btn-lg btn-primary btn-block" type="submit">Logout</button>
+</div>

@@ -1,0 +1,6 @@
+<p>
+  socios works!
+</p>
+<ul>
+  <li *ngFor="let socio of socios"><a routerLink="/socios/{{socio.id}}">{{socio.first_name}} {{socio.last_name}}</a></li>
+</ul>
