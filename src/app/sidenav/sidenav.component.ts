@@ -12,6 +12,7 @@ export class SidenavComponent {
   navigator = [
     {name: 'Dashboard', url: '/dashboard', icon: 'home'},
     {name: 'Socios', url: '/socios', icon: 'people'},
+    {name: 'Almacen', url: '/almacen', icon: 'store'},
     {name: 'Tesoreria', url: '/tesoreria', icon: 'euro_symbol'},
     {name: 'Admin', url: '/admin', icon: 'settings'}
   ];

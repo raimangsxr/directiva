@@ -21,6 +21,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { TesoreriaComponent } from './tesoreria/tesoreria.component';
+import { AlmacenComponent } from './almacen/almacen.component';
 
 
 @NgModule({
@@ -33,6 +35,8 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     LoginComponent,
     AdminComponent,
     SidenavComponent,
+    TesoreriaComponent,
+    AlmacenComponent,
   ],
   imports: [
     BrowserModule,
