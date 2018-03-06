@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {LOCALE_ID, NgModule} from '@angular/core';
+import localeEs from '@angular/common/locales/es';
+import {registerLocaleData} from '@angular/common';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
   MatButtonModule, MatCheckboxModule, MatIconModule, MatToolbarModule, MatSidenavModule,
@@ -12,7 +14,7 @@ import {
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import {ReactiveFormsModule} from "@angular/forms";
+import {ReactiveFormsModule} from '@angular/forms';
 import { SociosComponent } from './socios/socios.component';
 import { SociosDetailComponent } from './socios-detail/socios-detail.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -23,7 +25,10 @@ import { AdminComponent } from './admin/admin.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { TesoreriaComponent } from './tesoreria/tesoreria.component';
 import { AlmacenComponent } from './almacen/almacen.component';
+import {HttpClientModule} from '@angular/common/http';
+import {ApiService} from './services/api.service';
 
+registerLocaleData(localeEs, 'es');
 
 @NgModule({
   declarations: [
@@ -43,9 +48,19 @@ import { AlmacenComponent } from './almacen/almacen.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    MatAutocompleteModule, MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule, MatDialogModule, MatDividerModule, MatExpansionModule, MatGridListModule, MatIconModule, MatInputModule, MatListModule, MatMenuModule, MatNativeDateModule, MatPaginatorModule, MatProgressBarModule, MatProgressSpinnerModule, MatRadioModule, MatRippleModule, MatSelectModule, MatSidenavModule, MatSliderModule, MatSlideToggleModule, MatSnackBarModule, MatSortModule, MatStepperModule, MatTableModule, MatTabsModule, MatToolbarModule, MatTooltipModule,
+    HttpClientModule,
+    MatAutocompleteModule, MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule,
+    MatChipsModule, MatDatepickerModule, MatDialogModule, MatDividerModule, MatExpansionModule,
+    MatGridListModule, MatIconModule, MatInputModule, MatListModule, MatMenuModule, MatNativeDateModule,
+    MatPaginatorModule, MatProgressBarModule, MatProgressSpinnerModule, MatRadioModule, MatRippleModule,
+    MatSelectModule, MatSidenavModule, MatSliderModule, MatSlideToggleModule, MatSnackBarModule,
+    MatSortModule, MatStepperModule, MatTableModule, MatTabsModule, MatToolbarModule, MatTooltipModule,
   ],
-  providers: [SocioService],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'es' },
+    SocioService,
+    ApiService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

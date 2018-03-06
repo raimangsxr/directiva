@@ -1,49 +1,18 @@
-<div class="row mt-3 ml-0 mr-0 pt-2 bg-info">
-  <div class="col-12 text-center">
-    <mat-form-field>
+<div class="row ml-0 mr-0 pt-2">
+  <div class="col-12">
+    <mat-form-field style="width: 100%;">
       <input matInput placeholder="Buscar socios.." #search (keyup)="searchSocios(search.value)">
     </mat-form-field>
   </div>
 </div>
 <div class="row ml-0 mr-0 mb-3">
-  <div class="col-md-3 col-sm-12 mt-2" *ngFor="let socio of filteredSocios">
+  <div class="col-md-3 col-sm-6 mt-2" *ngFor="let socio of filteredSocios">
     <mat-card (click)="detailSocio(socio)">
       <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>{{socio.first_name}} {{socio.last_name}}</mat-card-title>
-        <mat-card-subtitle>Número {{socio.number}}</mat-card-subtitle>
+        <mat-card-title>{{socio.getFullname()}}</mat-card-title>
+        <mat-card-subtitle class="mb-0">Número {{socio.number}}</mat-card-subtitle>
       </mat-card-header>
-      <img mat-card-image [src]="socio.photoUrl" *ngIf="socio.photoUrl">
-      <img mat-card-image src="../../assets/images/no-image.png" *ngIf="!socio.photoUrl">
-
-      <mat-card-content>
-        <div class="row">
-          <div class="col-2 mt-2">
-            <mat-icon class="icon-align">home</mat-icon>
-          </div>
-          <div class="col-10 mt-2 text-justify">
-            <span>{{socio.address}}</span>
-          </div>
-          <div class="col-2 col-md-1 mt-2">
-            <mat-icon class="icon-align">motorcycle</mat-icon>
-          </div>
-          <div class="col-10 col-md-5 mt-2 text-justify">
-            <span>{{socio.moto}}</span>
-          </div>
-          <div class="col-1 col-md-2 mt-2">
-            <mat-icon class="icon-align">phone_android</mat-icon>
-          </div>
-          <div class="col-11 col-md-4 mt-2 text-justify">
-            <span>{{socio.phone}}</span>
-          </div>
-          <div class="col-1 col-md-2 mt-2">
-            <mat-icon class="icon-align">store</mat-icon>
-          </div>
-          <div class="col-11 col-md-4 mt-2 text-justify">
-            <span>Artículos 2</span>
-          </div>
-        </div>
-      </mat-card-content>
     </mat-card>
   </div>
   <div class="col-12 text-center bg-danger pt-3 pb-3 mt-2" *ngIf="filteredSocios.length == 0">

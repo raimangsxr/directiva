@@ -1,10 +1,137 @@
-<p>
-  Nombre: {{socio.first_name}}
-</p>
-<p>
-  Apellidos: {{socio.last_name}}
-</p>
-<p>
-  Edad: {{socio.age}}
-</p>
-<button (click)="goBack()">go back</button>
+<div class="row ml-0 mr-0 mb-3">
+  <div class="col-12 col-md-3 mt-2">
+    <mat-card>
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{socio.getFullname()}}</mat-card-title>
+        <mat-card-subtitle>Número {{socio.number}}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image [src]="socio.photo_person" *ngIf="socio.photo_person">
+      <img mat-card-image src="../../assets/images/no-image.png" *ngIf="!socio.photoUrl">
+      <mat-card-content>
+        <button mat-raised-button class="btn btn-lg btn-block" color="primary" (click)="goBack()">Atras</button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="col-12 col-md-9 mt-2">
+    <div class="row">
+      <div class="col-12">
+        <mat-card>
+          <mat-toolbar color="primary">
+            <mat-toolbar-row>
+              <span>Detalles del socio</span>
+            </mat-toolbar-row>
+          </mat-toolbar>
+          <mat-card-content class="p-3">
+            <div class="row">
+              <div class="col-12 col-md-6 mt-2">
+                <mat-icon class="icon-align">face</mat-icon>
+                <span class="ml-3" *ngIf="socio.sex === 'H'">Hombre</span>
+                <span class="ml-3" *ngIf="socio.sex === 'M'">Mujer</span>
+              </div>
+              <div class="col-12 col-md-6 mt-2">
+                <mat-icon class="icon-align">perm_identity</mat-icon>
+                <span class="ml-3">{{socio.nif}}</span>
+              </div>
+              <div class="col-12 col-md-6 mt-2">
+                <mat-icon class="icon-align">today</mat-icon>
+                <span class="ml-3">{{socio.birth | date: 'longDate'}} ({{socio.getAge()}} años)</span>
+              </div>
+              <div class="col-12 col-md-6 mt-2">
+                <mat-icon class="icon-align">fiber_new</mat-icon>
+                <span class="ml-3">{{socio.created | date: 'dd/MM/yyyy, HH:mm'}}</span>
+              </div>
+              <div class="col-12 mt-2">
+                <mat-icon class="icon-align">home</mat-icon>
+                <span class="ml-3">{{socio.getFullAddress()}}</span>
+              </div>
+              <div class="col-12 col-md-6 mt-2">
+                <div class="row" *ngIf="socio.moto1">
+                  <div class="col-12">
+                    <mat-icon class="icon-align">motorcycle</mat-icon><sub>1</sub>
+                    <span class="ml-2">{{socio.moto1}}</span>
+                  </div>
+                </div>
+                <div class="row" *ngIf="socio.moto2">
+                  <div class="col-12">
+                    <mat-icon class="icon-align">motorcycle</mat-icon><sub>2</sub>
+                    <span class="ml-2">{{socio.moto2}}</span>
+                  </div>
+                </div>
+                <div class="row" *ngIf="socio.moto3">
+                  <div class="col-12">
+                    <mat-icon class="icon-align">motorcycle</mat-icon><sub>3</sub>
+                    <span class="ml-2">{{socio.moto3}}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 mt-2">
+                <div class="row" *ngIf="socio.primary_phone">
+                  <div class="col-12">
+                    <mat-icon class="icon-align">phone_android</mat-icon><sub>1</sub>
+                    <span class="ml-2">{{socio.primary_phone}}</span>
+                  </div>
+                </div>
+                <div class="row" *ngIf="socio.secondary_phone">
+                  <div class="col-12">
+                    <mat-icon class="icon-align">phone_android</mat-icon><sub>2</sub>
+                    <span class="ml-2">{{socio.secondary_phone}}</span>
+                  </div>
+                </div>
+                <div class="row" *ngIf="socio.email">
+                  <div class="col-12">
+                    <mat-icon class="icon-align">email</mat-icon>
+                    <span class="ml-3">{{socio.email}}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 mt-2">
+                <mat-icon class="icon-align">photo_camera</mat-icon><sub>1</sub>
+                <span class="ml-2"><a>Link a imagen persona</a></span>
+              </div>
+              <div class="col-12 mt-2">
+                <mat-icon class="icon-align">photo_camera</mat-icon><sub>2</sub>
+                <span class="ml-2"><a>Link a imagen moto</a></span>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 mt-2">
+        <mat-card>
+          <mat-toolbar color="primary">
+            <mat-toolbar-row>
+              <span>Almacén asignado y cuotas</span>
+            </mat-toolbar-row>
+          </mat-toolbar>
+          <mat-card-content class="p-3">
+            <div class="row">
+              <div class="col-12 col-md-6 mt-2">
+                <div class="row">
+                  <div class="col-12">Camiseta 2015</div>
+                  <div class="col-12">Camiseta 2016</div>
+                  <div class="col-12">Camiseta 2017</div>
+                  <div class="col-12">Polo Azul</div>
+                  <div class="col-12">Chaleco</div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 mt-2">
+                <div class="row">
+                  <div class="col-12">
+                    <mat-chip-list>
+                      <mat-chip>Cuota 2015</mat-chip>
+                      <mat-chip color="primary" selected="true">Cuota 2016</mat-chip>
+                      <mat-chip color="accent" selected="true">Cuota 2017</mat-chip>
+                    </mat-chip-list>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

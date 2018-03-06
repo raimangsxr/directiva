@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 
-import {Socio} from "../models/socio";
-import {SOCIOS} from "../mock-socios";
+import {Socio} from '../models/socio';
+import {SOCIOS} from '../mock-socios';
 
 @Injectable()
 export class SocioService {
