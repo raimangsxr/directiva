@@ -8,6 +8,7 @@ import {LoginComponent} from "./login/login.component";
 import {AdminComponent} from "./admin/admin.component";
 import {AuthGuard} from "./services/auth-guard.service";
 import {AuthService} from "./services/auth.service";
+import {WarehouseComponent} from './warehouse/warehouse.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'socios', component: SociosComponent},
   { path: 'socios/:id', component: SociosDetailComponent },
+  { path: 'warehouse', component: WarehouseComponent},
   { path: '**', component: PageNotFoundComponent }
 ];
 

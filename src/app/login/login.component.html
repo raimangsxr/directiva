@@ -1,7 +1,7 @@
 <div class="row ml-0 mr-0 h-100 justify-content-center align-items-center text-center">
   <form [formGroup]="loginForm" class="form-signin col-12" novalidate>
-    <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <img class="mb-4" src="../../assets/images/logo-asociacion.png" alt="Logo Asociación Mototurística Ría de Noia" width="300">
+    <h1 class="h3 mb-3 font-weight-normal">Autorización necesaria</h1>
     <div *ngIf="!loading">
       <mat-form-field class="mt-2 mb-3">
         <input matInput placeholder="Nombre de usuario" formControlName="username">
@@ -17,8 +17,8 @@
       </mat-form-field>
     </div>
     <mat-spinner *ngIf="loading" class="mx-auto mt-4 mb-4"></mat-spinner>
-    <button (click)="login()" [disabled]="loading || loginForm.invalid" *ngIf="!authService.isLoggedIn" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    <button (click)="login()" [disabled]="loading || loginForm.invalid" *ngIf="!authService.isLoggedIn()" class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
     <p class="mt-3 text-muted">© 2007-2018</p>
   </form>
-  <button (click)="logout()" *ngIf="authService.isLoggedIn" class="btn btn-lg btn-primary btn-block" type="submit">Logout</button>
+  <button (click)="logout()" *ngIf="authService.isLoggedIn()" class="btn btn-lg btn-primary btn-block" type="submit">Cerrar sesión</button>
 </div>

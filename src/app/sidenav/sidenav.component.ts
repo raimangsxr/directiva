@@ -1,5 +1,6 @@
 import {MediaMatcher} from '@angular/cdk/layout';
 import {ChangeDetectorRef, Component} from '@angular/core';
+import {AuthService} from '../services/auth.service';
 
 @Component({
   selector: 'app-sidenav',
@@ -12,14 +13,14 @@ export class SidenavComponent {
   navigator = [
     {name: 'Dashboard', url: '/dashboard', icon: 'home'},
     {name: 'Socios', url: '/socios', icon: 'people'},
-    {name: 'Almacen', url: '/almacen', icon: 'store'},
+    {name: 'Almacen', url: '/warehouse', icon: 'store'},
     {name: 'Tesoreria', url: '/tesoreria', icon: 'euro_symbol'},
     {name: 'Admin', url: '/admin', icon: 'settings'}
   ];
 
   private _mobileQueryListener: () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, public authService: AuthService) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -27,5 +28,9 @@ export class SidenavComponent {
 
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
+  }
+
+  logout(): void {
+    this.authService.logout();
   }
 }

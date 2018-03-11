@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute} from '@angular/router';
 import { Location } from '@angular/common';
-import {SocioService} from "../services/socio.service";
-import {Socio} from "../models/socio";
+import {Socio} from '../models/socio';
+import {ApiService} from '../services/api.service';
 
 @Component({
   selector: 'app-socios-detail',
@@ -13,15 +13,15 @@ export class SociosDetailComponent implements OnInit {
 
   socio: Socio;
 
-  constructor(private route: ActivatedRoute, private socioService: SocioService, private location: Location) { }
+  constructor(private route: ActivatedRoute, private apiService: ApiService, private location: Location) { }
 
   ngOnInit() {
     this.getSocio();
   }
 
   getSocio() {
-    var id = +this.route.snapshot.paramMap.get('id');
-    this.socioService.getSocio(id)
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.apiService.getMember(id)
       .subscribe(socio => this.socio = socio);
   }
 

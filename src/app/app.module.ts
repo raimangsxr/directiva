@@ -24,9 +24,9 @@ import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { TesoreriaComponent } from './tesoreria/tesoreria.component';
-import { AlmacenComponent } from './almacen/almacen.component';
 import {HttpClientModule} from '@angular/common/http';
 import {ApiService} from './services/api.service';
+import { WarehouseComponent } from './warehouse/warehouse.component';
 
 registerLocaleData(localeEs, 'es');
 
@@ -41,7 +41,7 @@ registerLocaleData(localeEs, 'es');
     AdminComponent,
     SidenavComponent,
     TesoreriaComponent,
-    AlmacenComponent,
+    WarehouseComponent,
   ],
   imports: [
     BrowserModule,
