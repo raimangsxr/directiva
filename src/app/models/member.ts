@@ -1,6 +1,6 @@
 import {Deserializable} from './deserializable';
 
-export class Socio implements Deserializable<Socio> {
+export class Member implements Deserializable<Member> {
   id: number;
   first_name: string;
   last_name: string;
@@ -25,8 +25,9 @@ export class Socio implements Deserializable<Socio> {
   created: Date;
   updated: Date;
   updated_by: string;
+  pending_paids: boolean;
 
-  deserialize(input: any): Socio {
+  deserialize(input: any): Member {
     Object.assign(this, input);
     return this;
   }

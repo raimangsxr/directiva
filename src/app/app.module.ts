@@ -15,33 +15,37 @@ import {
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import {ReactiveFormsModule} from '@angular/forms';
-import { SociosComponent } from './socios/socios.component';
-import { SociosDetailComponent } from './socios-detail/socios-detail.component';
+import { MembersComponent } from './members/members.component';
+import { MemberDetailComponent } from './member-detail/member-detail.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { SocioService } from './services/socio.service';
+import { MemberService } from './services/member.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
-import { TesoreriaComponent } from './tesoreria/tesoreria.component';
-import { AlmacenComponent } from './almacen/almacen.component';
 import {HttpClientModule} from '@angular/common/http';
 import {ApiService} from './services/api.service';
+import { TreasuryComponent } from './treasury/treasury.component';
+import { WarehouseComponent } from './warehouse/warehouse.component';
+import { MemberDatatableComponent } from './member-datatable/member-datatable.component';
+import { MemberPendingFeeComponent } from './member-pending-fee/member-pending-fee.component';
 
 registerLocaleData(localeEs, 'es');
 
 @NgModule({
   declarations: [
     AppComponent,
-    SociosComponent,
-    SociosDetailComponent,
+    MembersComponent,
+    MemberDetailComponent,
     DashboardComponent,
     PageNotFoundComponent,
     LoginComponent,
     AdminComponent,
     SidenavComponent,
-    TesoreriaComponent,
-    AlmacenComponent,
+    TreasuryComponent,
+    WarehouseComponent,
+    MemberDatatableComponent,
+    MemberPendingFeeComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,8 +62,11 @@ registerLocaleData(localeEs, 'es');
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'es' },
-    SocioService,
+    MemberService,
     ApiService
+  ],
+  entryComponents: [
+    MemberPendingFeeComponent,
   ],
   bootstrap: [AppComponent]
 })

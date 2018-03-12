@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SociosDetailComponent } from './socios-detail.component';
+import { SociosDetailComponent } from './member-detail.component';
 
 describe('SociosDetailComponent', () => {
   let component: SociosDetailComponent;

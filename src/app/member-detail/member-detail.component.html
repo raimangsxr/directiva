@@ -3,11 +3,11 @@
     <mat-card>
       <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>{{socio.getFullname()}}</mat-card-title>
-        <mat-card-subtitle>Número {{socio.number}}</mat-card-subtitle>
+        <mat-card-title>{{member.getFullname()}}</mat-card-title>
+        <mat-card-subtitle>Número {{member.number}}</mat-card-subtitle>
       </mat-card-header>
-      <img mat-card-image [src]="socio.photo_person" *ngIf="socio.photo_person">
-      <img mat-card-image src="../../assets/images/no-image.png" *ngIf="!socio.photoUrl">
+      <img mat-card-image [src]="member.photo_person" *ngIf="member.photo_person">
+      <img mat-card-image src="../../assets/images/no-image.png" *ngIf="!member.photoUrl">
       <mat-card-content>
         <button mat-raised-button class="btn btn-lg btn-block" color="primary" (click)="goBack()">Atras</button>
       </mat-card-content>
@@ -26,62 +26,62 @@
             <div class="row">
               <div class="col-12 col-md-6 mt-2">
                 <mat-icon class="icon-align">face</mat-icon>
-                <span class="ml-3" *ngIf="socio.sex === 'H'">Hombre</span>
-                <span class="ml-3" *ngIf="socio.sex === 'M'">Mujer</span>
+                <span class="ml-3" *ngIf="member.sex === 'H'">Hombre</span>
+                <span class="ml-3" *ngIf="member.sex === 'M'">Mujer</span>
               </div>
               <div class="col-12 col-md-6 mt-2">
                 <mat-icon class="icon-align">perm_identity</mat-icon>
-                <span class="ml-3">{{socio.nif}}</span>
+                <span class="ml-3">{{member.nif}}</span>
               </div>
               <div class="col-12 col-md-6 mt-2">
                 <mat-icon class="icon-align">today</mat-icon>
-                <span class="ml-3">{{socio.birth | date: 'longDate'}} ({{socio.getAge()}} años)</span>
+                <span class="ml-3">{{member.birth | date: 'longDate'}} ({{member.getAge()}} años)</span>
               </div>
               <div class="col-12 col-md-6 mt-2">
                 <mat-icon class="icon-align">fiber_new</mat-icon>
-                <span class="ml-3">{{socio.created | date: 'dd/MM/yyyy, HH:mm'}}</span>
+                <span class="ml-3">{{member.created | date: 'dd/MM/yyyy, HH:mm'}}</span>
               </div>
               <div class="col-12 mt-2">
                 <mat-icon class="icon-align">home</mat-icon>
-                <span class="ml-3">{{socio.getFullAddress()}}</span>
+                <span class="ml-3">{{member.getFullAddress()}}</span>
               </div>
               <div class="col-12 col-md-6 mt-2">
-                <div class="row" *ngIf="socio.moto1">
+                <div class="row" *ngIf="member.moto1">
                   <div class="col-12">
                     <mat-icon class="icon-align">motorcycle</mat-icon><sub>1</sub>
-                    <span class="ml-2">{{socio.moto1}}</span>
+                    <span class="ml-2">{{member.moto1}}</span>
                   </div>
                 </div>
-                <div class="row" *ngIf="socio.moto2">
+                <div class="row" *ngIf="member.moto2">
                   <div class="col-12">
                     <mat-icon class="icon-align">motorcycle</mat-icon><sub>2</sub>
-                    <span class="ml-2">{{socio.moto2}}</span>
+                    <span class="ml-2">{{member.moto2}}</span>
                   </div>
                 </div>
-                <div class="row" *ngIf="socio.moto3">
+                <div class="row" *ngIf="member.moto3">
                   <div class="col-12">
                     <mat-icon class="icon-align">motorcycle</mat-icon><sub>3</sub>
-                    <span class="ml-2">{{socio.moto3}}</span>
+                    <span class="ml-2">{{member.moto3}}</span>
                   </div>
                 </div>
               </div>
               <div class="col-12 col-md-6 mt-2">
-                <div class="row" *ngIf="socio.primary_phone">
+                <div class="row" *ngIf="member.primary_phone">
                   <div class="col-12">
                     <mat-icon class="icon-align">phone_android</mat-icon><sub>1</sub>
-                    <span class="ml-2">{{socio.primary_phone}}</span>
+                    <span class="ml-2">{{member.primary_phone}}</span>
                   </div>
                 </div>
-                <div class="row" *ngIf="socio.secondary_phone">
+                <div class="row" *ngIf="member.secondary_phone">
                   <div class="col-12">
                     <mat-icon class="icon-align">phone_android</mat-icon><sub>2</sub>
-                    <span class="ml-2">{{socio.secondary_phone}}</span>
+                    <span class="ml-2">{{member.secondary_phone}}</span>
                   </div>
                 </div>
-                <div class="row" *ngIf="socio.email">
+                <div class="row" *ngIf="member.email">
                   <div class="col-12">
                     <mat-icon class="icon-align">email</mat-icon>
-                    <span class="ml-3">{{socio.email}}</span>
+                    <span class="ml-3">{{member.email}}</span>
                   </div>
                 </div>
               </div>

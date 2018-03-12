@@ -1,7 +1,7 @@
-import {Socio} from './models/socio';
+import {Member} from './models/member';
 
-export const SOCIOS: Socio[] = [
-  new Socio().deserialize({
+export const MEMBERS: Member[] = [
+  new Member().deserialize({
     id: 1,
     first_name: 'Ricardo',
     last_name: 'Romaní',
@@ -26,11 +26,12 @@ export const SOCIOS: Socio[] = [
     created: new Date(),
     updated: new Date(),
     updated_by: 'rromani',
+    pending_paids: false
   }),
-  new Socio().deserialize({
+  new Member().deserialize({
     id: 2,
-    first_name: 'Ricardo',
-    last_name: 'Romaní',
+    first_name: 'Paco',
+    last_name: 'Rabanne',
     alias: 'Richi',
     number: 6,
     nif: '12345678A',
@@ -52,11 +53,12 @@ export const SOCIOS: Socio[] = [
     created: new Date(),
     updated: new Date(),
     updated_by: 'rromani',
+    pending_paids: true
   }),
-  new Socio().deserialize({
+  new Member().deserialize({
     id: 3,
-    first_name: 'Ricardo',
-    last_name: 'Romaní',
+    first_name: 'Ricardo Manuel',
+    last_name: 'Romaní Azpilicueta del Rio',
     alias: 'Richi',
     number: 6,
     nif: '12345678A',
@@ -78,8 +80,9 @@ export const SOCIOS: Socio[] = [
     created: new Date(),
     updated: new Date(),
     updated_by: 'rromani',
+    pending_paids: true
   }),
-  new Socio().deserialize({
+  new Member().deserialize({
     id: 4,
     first_name: 'Ricardo',
     last_name: 'Romaní',
@@ -104,8 +107,9 @@ export const SOCIOS: Socio[] = [
     created: new Date(),
     updated: new Date(),
     updated_by: 'rromani',
+    pending_paids: false
   }),
-  new Socio().deserialize({
+  new Member().deserialize({
     id: 5,
     first_name: 'Ricardo',
     last_name: 'Romaní',
@@ -130,8 +134,9 @@ export const SOCIOS: Socio[] = [
     created: new Date(),
     updated: new Date(),
     updated_by: 'rromani',
+    pending_paids: false
   }),
-  new Socio().deserialize({
+  new Member().deserialize({
     id: 6,
     first_name: 'Ricardo',
     last_name: 'Romaní',
@@ -156,8 +161,9 @@ export const SOCIOS: Socio[] = [
     created: new Date(),
     updated: new Date(),
     updated_by: 'rromani',
+    pending_paids: false
   }),
-  new Socio().deserialize({
+  new Member().deserialize({
     id: 7,
     first_name: 'Ricardo',
     last_name: 'Romaní',
@@ -182,8 +188,9 @@ export const SOCIOS: Socio[] = [
     created: new Date(),
     updated: new Date(),
     updated_by: 'rromani',
+    pending_paids: false
   }),
-  new Socio().deserialize({
+  new Member().deserialize({
     id: 8,
     first_name: 'Ricardo',
     last_name: 'Romaní',
@@ -208,8 +215,9 @@ export const SOCIOS: Socio[] = [
     created: new Date(),
     updated: new Date(),
     updated_by: 'rromani',
+    pending_paids: true
   }),
-  new Socio().deserialize({
+  new Member().deserialize({
     id: 9,
     first_name: 'Ricardo',
     last_name: 'Romaní',
@@ -234,5 +242,6 @@ export const SOCIOS: Socio[] = [
     created: new Date(),
     updated: new Date(),
     updated_by: 'rromani',
+    pending_paids: true
   }),
 ];

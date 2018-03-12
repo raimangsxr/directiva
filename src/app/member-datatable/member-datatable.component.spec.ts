@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AlmacenComponent } from './almacen.component';
+import { MemberDatatableComponent } from './member-datatable.component';
 
-describe('AlmacenComponent', () => {
-  let component: AlmacenComponent;
-  let fixture: ComponentFixture<AlmacenComponent>;
+describe('MemberDatatableComponent', () => {
+  let component: MemberDatatableComponent;
+  let fixture: ComponentFixture<MemberDatatableComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AlmacenComponent ]
+      declarations: [ MemberDatatableComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AlmacenComponent);
+    fixture = TestBed.createComponent(MemberDatatableComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
